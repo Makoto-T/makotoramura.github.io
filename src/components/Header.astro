@@ -1,11 +1,18 @@
 ---
-const navLinks = [
-  { href: '/', label: 'TOP' },
-  { href: '/works', label: 'WORKS' },
-  { href: '/profile', label: 'PROFILE' },
-  { href: '/contact', label: 'CONTACT' },
+// ensure trailing slash regardless of Astro version behavior
+const BASE = import.meta.env.BASE_URL.replace(/\/?$/, '/');
+
+const navItems = [
+  { path: '/', href: BASE, label: 'TOP' },
+  { path: '/works', href: `${BASE}works`, label: 'WORKS' },
+  { path: '/profile', href: `${BASE}profile`, label: 'PROFILE' },
+  { path: '/contact', href: `${BASE}contact`, label: 'CONTACT' },
 ];
-const currentPath = Astro.url.pathname;
+
+// strip base for active-link comparison
+const base = BASE.replace(/\/$/, '');
+const rawPath = Astro.url.pathname;
+const currentPath = rawPath.startsWith(base) ? rawPath.slice(base.length) || '/' : rawPath;
 ---
 
 <header
@@ -14,7 +21,7 @@ const currentPath = Astro.url.pathname;
 >
   <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
     <a
-      href="/"
+      href={BASE}
       class="font-bold text-sm tracking-[0.2em] text-ink hover:text-accent transition-colors duration-200"
     >
       MAKOTO TAMURA
@@ -22,17 +29,17 @@ const currentPath = Astro.url.pathname;
 
     <!-- Desktop nav -->
     <nav class="hidden md:flex items-center gap-10">
-      {navLinks.map((link) => (
+      {navItems.map((item) => (
         <a
-          href={link.href}
+          href={item.href}
           class={`text-xs tracking-widest font-medium transition-colors duration-200 ${
-            currentPath === link.href ||
-            (link.href !== '/' && currentPath.startsWith(link.href))
+            currentPath === item.path ||
+            (item.path !== '/' && currentPath.startsWith(item.path))
               ? 'text-accent'
               : 'text-ink-mid hover:text-ink'
           }`}
         >
-          {link.label}
+          {item.label}
         </a>
       ))}
     </nav>
@@ -78,14 +85,14 @@ const currentPath = Astro.url.pathname;
   <!-- Mobile nav -->
   <div id="mobile-nav" class="hidden md:hidden bg-cream border-t border-seam">
     <nav class="max-w-6xl mx-auto px-6 py-6 flex flex-col gap-5">
-      {navLinks.map((link) => (
+      {navItems.map((item) => (
         <a
-          href={link.href}
+          href={item.href}
           class={`text-sm tracking-widest font-medium ${
-            currentPath === link.href ? 'text-accent' : 'text-ink-mid'
+            currentPath === item.path ? 'text-accent' : 'text-ink-mid'
           }`}
         >
-          {link.label}
+          {item.label}
         </a>
       ))}
     </nav>

@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+const BASE = import.meta.env.BASE_URL.replace(/\/?$/, '/');
 ---
 
 <BaseLayout title="TOP">
@@ -35,13 +36,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
       <div class="flex flex-wrap gap-4">
         <a
-          href="/contact"
+          href={`${BASE}contact`}
           class="inline-flex items-center px-7 py-3.5 bg-accent text-white text-xs font-bold tracking-widest rounded hover:bg-accent-light transition-colors duration-200"
         >
           お仕事のご相談
         </a>
         <a
-          href="/works"
+          href={`${BASE}works`}
           class="inline-flex items-center px-7 py-3.5 border border-seam text-ink text-xs font-medium tracking-widest rounded hover:border-ink transition-colors duration-200"
         >
           WORKS
@@ -106,7 +107,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         プロジェクトの内容・規模を問わず、まずはお気軽にご連絡ください。
       </p>
       <a
-        href="/contact"
+        href={`${BASE}contact`}
         class="inline-flex items-center gap-3 px-8 py-4 border border-seam text-ink text-xs font-medium tracking-widest rounded hover:border-accent hover:text-accent transition-colors duration-200"
       >
         お問い合わせ
