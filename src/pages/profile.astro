@@ -1,0 +1,113 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const skills = [
+  { name: 'Cinema 4D', desc: 'Primary Tool', level: 'Expert' },
+  { name: 'Redshift', desc: 'GPU Renderer', level: 'Advanced' },
+  { name: 'After Effects', desc: 'Compositing', level: 'Advanced' },
+  { name: 'Octane Render', desc: 'GPU Renderer', level: 'Advanced' },
+];
+
+const services = [
+  'バーチャルライブ用3DCGステージ制作',
+  'プロダクト系CGの静止画・動画制作',
+  'その他3DCG全般',
+  'Cinema 4Dトレーニング（個人・法人）',
+];
+---
+
+<BaseLayout title="PROFILE" description="田村誠のプロフィール - 3DCGフリーランサー / MAXON Certified Master Trainer">
+  <!-- Page header -->
+  <section class="pt-40 pb-20">
+    <div class="max-w-6xl mx-auto px-6">
+      <p class="text-xs tracking-[0.35em] text-accent mb-4 font-medium">PROFILE</p>
+      <h1 class="text-5xl md:text-7xl font-black tracking-tighter text-ink mb-8">
+        プロフィール
+      </h1>
+      <div class="w-12 h-px bg-seam"></div>
+    </div>
+  </section>
+
+  <!-- Content -->
+  <section class="pb-32">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid md:grid-cols-[280px_1fr] gap-16 md:gap-24">
+
+        <!-- Left -->
+        <div>
+          <img
+            src="/MakotoTamura_Profile.jpg"
+            alt="田村 誠"
+            class="w-48 h-48 object-cover mb-8"
+          />
+
+          <h2 class="text-2xl font-bold text-ink tracking-tight mb-1">田村 誠</h2>
+          <p class="text-xs tracking-widest text-ink-mid mb-8">MAKOTO TAMURA</p>
+
+          <!-- Certification -->
+          <div class="border border-accent/20 p-5 mb-8 bg-accent/[0.03]">
+            <p class="text-[10px] tracking-widest text-accent mb-2">CERTIFICATION</p>
+            <p class="text-sm font-semibold text-ink leading-snug">
+              MAXON Certified<br />Master Trainer
+            </p>
+            <p class="text-xs text-ink-faint mt-1">Cinema 4D</p>
+          </div>
+
+          <!-- SNS links (add your URLs) -->
+          <!--
+          <div class="flex gap-5">
+            <a href="#" class="text-[10px] tracking-widest text-ink-faint hover:text-ink transition-colors">X</a>
+            <a href="#" class="text-[10px] tracking-widest text-ink-faint hover:text-ink transition-colors">INSTAGRAM</a>
+          </div>
+          -->
+        </div>
+
+        <!-- Right -->
+        <div>
+          <!-- About -->
+          <div class="mb-14">
+            <p class="text-[10px] tracking-[0.35em] text-ink-faint mb-5">ABOUT</p>
+            <p class="text-ink-mid leading-[1.9] text-sm mb-4">
+              3DCGフリーランサーとして、バーチャルライブ用ステージ制作、
+              プロダクト系CGの静止画・動画制作を中心に活動しています。
+            </p>
+            <p class="text-ink-mid leading-[1.9] text-sm">
+              Cinema 4DのMAXON認定マスタートレーナーとして、
+              個人・法人向けのトレーニングも提供しています。
+              豊富な実務経験をもとに、受講者の目標に合わせた実践的なカリキュラムを提供します。
+            </p>
+          </div>
+
+          <!-- Skills -->
+          <div class="mb-14">
+            <p class="text-[10px] tracking-[0.35em] text-ink-faint mb-6">SKILLS & TOOLS</p>
+            <div class="flex flex-col">
+              {skills.map((skill) => (
+                <div class="flex items-center justify-between border-b border-seam/60 py-4 first:pt-0">
+                  <div>
+                    <p class="text-ink text-sm font-medium">{skill.name}</p>
+                    <p class="text-ink-faint text-xs mt-0.5">{skill.desc}</p>
+                  </div>
+                  <span class="text-xs text-ink-faint tracking-widest">{skill.level}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <!-- Services -->
+          <div>
+            <p class="text-[10px] tracking-[0.35em] text-ink-faint mb-6">SERVICES</p>
+            <ul class="flex flex-col gap-4">
+              {services.map((item) => (
+                <li class="flex items-start gap-3 text-sm text-ink-mid">
+                  <span class="text-accent shrink-0 mt-0.5">—</span>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

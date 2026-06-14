@@ -1,0 +1,91 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const categories = [
+  {
+    num: '01',
+    en: 'Virtual Live Stage',
+    ja: 'バーチャルライブ用ステージ制作',
+    desc: 'アーティスト・タレントのバーチャルコンサート・ライブイベント向けの3DCGステージを制作しています。アーティストの世界観や楽曲の雰囲気に合わせた空間設計・ライティングから、リアルタイムレンダリング対応まで幅広く対応可能です。',
+    tags: ['ステージデザイン', 'ライティング', 'リアルタイム対応', 'アニメーション'],
+  },
+  {
+    num: '02',
+    en: 'Product CG',
+    ja: 'プロダクト系CG制作',
+    desc: '商品・製品の静止画および動画CGを制作しています。広告・カタログ・ECサイト・PR動画など様々な用途に合わせた高品質なビジュアルを提供します。素材感・質感表現にこだわったフォトリアルなCGが得意です。',
+    tags: ['静止画', '動画・アニメーション', 'フォトリアル', '広告・PR'],
+  },
+  {
+    num: '03',
+    en: 'Cinema 4D Training',
+    ja: 'トレーニング・研修',
+    desc: 'MAXON認定マスタートレーナーとして、個人・法人向けのCinema 4Dトレーニングを提供しています。基礎から実務レベルの応用まで、受講者のスキルと目標に合わせたカリキュラムを組みます。オンライン・対面どちらにも対応可能です。',
+    tags: ['個人向け', '法人向け', 'オンライン対応', '対面対応', 'MAXON認定'],
+  },
+];
+---
+
+<BaseLayout title="WORKS" description="田村誠の3DCG制作実績カテゴリ">
+  <!-- Page header -->
+  <section class="pt-40 pb-20">
+    <div class="max-w-6xl mx-auto px-6">
+      <p class="text-xs tracking-[0.35em] text-accent mb-4 font-medium">WORKS</p>
+      <h1 class="text-5xl md:text-7xl font-black tracking-tighter text-ink mb-8">
+        制作実績
+      </h1>
+      <div class="w-12 h-px bg-seam mb-8"></div>
+      <p class="text-ink-mid max-w-lg leading-relaxed text-sm">
+        受注実績はほとんどが機密保持契約（NDA）の対象となるため、
+        個別の作品・プロジェクト情報の公開は行っておりません。
+        ご関心のある方はお気軽にお問い合わせください。
+      </p>
+    </div>
+  </section>
+
+  <!-- Categories -->
+  <section class="pb-32">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="flex flex-col gap-px bg-seam/30">
+        {categories.map((cat) => (
+          <article class="bg-cream grid md:grid-cols-[1fr_2fr] gap-8 md:gap-16 p-10 md:p-16 hover:bg-cream-mid transition-colors duration-300">
+            <div>
+              <div class="text-xs tracking-widest text-ink-faint mb-5">{cat.num}</div>
+              <h2 class="text-2xl md:text-3xl font-bold text-ink tracking-tight mb-2">
+                {cat.en}
+              </h2>
+              <p class="text-ink-faint text-sm tracking-wide">{cat.ja}</p>
+            </div>
+            <div>
+              <p class="text-ink-mid leading-relaxed mb-8 text-sm">{cat.desc}</p>
+              <ul class="flex flex-wrap gap-2">
+                {cat.tags.map((tag) => (
+                  <li class="text-xs px-3 py-1 border border-seam text-ink-faint tracking-wide">
+                    {tag}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </article>
+        ))}
+      </div>
+
+      <div class="mt-16 flex items-center gap-4">
+        <div class="w-8 h-px bg-seam"></div>
+        <p class="text-ink-faint text-xs tracking-widest">
+          詳細はお問い合わせください
+        </p>
+        <a
+          href="/contact"
+          class="ml-auto flex items-center gap-2 text-xs tracking-widest text-ink-mid hover:text-accent transition-colors duration-200"
+        >
+          CONTACT
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5">
+            <line x1="1" y1="7" x2="13" y2="7" />
+            <polyline points="8,2 13,7 8,12" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

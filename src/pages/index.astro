@@ -1,0 +1,120 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="TOP">
+  <!-- HERO -->
+  <section class="relative min-h-screen flex flex-col justify-center overflow-hidden">
+    <div class="absolute inset-0 bg-grid pointer-events-none" aria-hidden="true"></div>
+    <div
+      class="absolute inset-0 pointer-events-none"
+      style="background: radial-gradient(ellipse 80% 50% at 50% -5%, rgba(139,64,64,0.05) 0%, transparent 70%);"
+      aria-hidden="true"
+    ></div>
+
+    <div class="relative max-w-6xl mx-auto px-6 pt-32 pb-28">
+      <p class="text-xs tracking-[0.35em] text-accent mb-8 font-medium">
+        3D CG FREELANCER
+      </p>
+
+      <h1 class="text-6xl md:text-8xl lg:text-[9rem] font-black tracking-tighter text-ink leading-none mb-4">
+        MAKOTO<br />TAMURA
+      </h1>
+
+      <p class="text-xl md:text-2xl text-ink-mid font-light tracking-[0.25em] mb-8">
+        田村 誠
+      </p>
+
+      <div class="w-12 h-px bg-accent mb-8"></div>
+
+      <p class="text-ink-mid text-base md:text-lg max-w-xl leading-relaxed mb-12">
+        Cinema 4D MAXON認定マスタートレーナー。<br />
+        バーチャルライブステージからプロダクトCGまで、<br />
+        3DCGで表現の可能性を広げます。
+      </p>
+
+      <div class="flex flex-wrap gap-4">
+        <a
+          href="/contact"
+          class="inline-flex items-center px-7 py-3.5 bg-accent text-white text-xs font-bold tracking-widest rounded hover:bg-accent-light transition-colors duration-200"
+        >
+          お仕事のご相談
+        </a>
+        <a
+          href="/works"
+          class="inline-flex items-center px-7 py-3.5 border border-seam text-ink text-xs font-medium tracking-widest rounded hover:border-ink transition-colors duration-200"
+        >
+          WORKS
+        </a>
+      </div>
+    </div>
+
+    <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-ink-faint">
+      <span class="text-[10px] tracking-widest">SCROLL</span>
+      <div class="w-px h-12 bg-gradient-to-b from-seam to-transparent"></div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="py-32">
+    <div class="max-w-6xl mx-auto px-6">
+      <p class="text-xs tracking-[0.35em] text-accent mb-3 font-medium">SERVICES</p>
+      <h2 class="text-3xl md:text-4xl font-bold text-ink mb-16 tracking-tight">
+        提供できること
+      </h2>
+
+      <div class="grid md:grid-cols-3 gap-px bg-seam/40">
+        {[
+          {
+            num: '01',
+            en: 'Virtual Live Stage',
+            ja: 'バーチャルライブ用ステージ',
+            desc: 'アーティストのバーチャルライブ・コンサート向けの3DCGステージ制作。世界観を空間として立体的に表現します。',
+          },
+          {
+            num: '02',
+            en: 'Product CG',
+            ja: 'プロダクト系CG制作',
+            desc: '商品・製品の魅力を最大限に引き出す静止画・動画CGを制作。広告・PR・ECサイト等の用途に対応します。',
+          },
+          {
+            num: '03',
+            en: 'Cinema 4D Training',
+            ja: 'トレーニング・研修',
+            desc: 'MAXON認定マスタートレーナーによる個人・法人向けCinema 4Dトレーニング。基礎から応用まで対応します。',
+          },
+        ].map((s) => (
+          <div class="bg-cream p-8 md:p-10 hover:bg-cream-mid transition-colors duration-300">
+            <div class="text-xs tracking-widest text-ink-faint mb-6">{s.num}</div>
+            <h3 class="text-lg font-bold text-ink mb-2 tracking-tight">{s.en}</h3>
+            <p class="text-xs text-ink-faint tracking-wide mb-5">{s.ja}</p>
+            <p class="text-sm text-ink-mid leading-relaxed">{s.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-32 border-t border-seam/60">
+    <div class="max-w-6xl mx-auto px-6 text-center">
+      <p class="text-xs tracking-[0.35em] text-accent mb-6 font-medium">CONTACT</p>
+      <h2 class="text-3xl md:text-5xl font-bold text-ink mb-6 tracking-tight">
+        お仕事のご相談、<br class="md:hidden" />お気軽にどうぞ
+      </h2>
+      <p class="text-ink-mid mb-12 max-w-sm mx-auto leading-relaxed text-sm">
+        プロジェクトの内容・規模を問わず、まずはお気軽にご連絡ください。
+      </p>
+      <a
+        href="/contact"
+        class="inline-flex items-center gap-3 px-8 py-4 border border-seam text-ink text-xs font-medium tracking-widest rounded hover:border-accent hover:text-accent transition-colors duration-200"
+      >
+        お問い合わせ
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5">
+          <line x1="1" y1="7" x2="13" y2="7" />
+          <polyline points="8,2 13,7 8,12" />
+        </svg>
+      </a>
+    </div>
+  </section>
+</BaseLayout>

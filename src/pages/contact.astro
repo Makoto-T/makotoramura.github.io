@@ -1,0 +1,136 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="CONTACT" description="田村誠へのお問い合わせ">
+  <!-- Page header -->
+  <section class="pt-40 pb-20">
+    <div class="max-w-6xl mx-auto px-6">
+      <p class="text-xs tracking-[0.35em] text-accent mb-4 font-medium">CONTACT</p>
+      <h1 class="text-5xl md:text-7xl font-black tracking-tighter text-ink mb-8">
+        お問い合わせ
+      </h1>
+      <div class="w-12 h-px bg-seam mb-8"></div>
+      <p class="text-ink-mid max-w-lg leading-relaxed text-sm">
+        お仕事のご依頼・ご相談・トレーニングのお申し込みなど、
+        お気軽にご連絡ください。
+      </p>
+    </div>
+  </section>
+
+  <!-- Form -->
+  <section class="pb-32">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid md:grid-cols-[1fr_2fr] gap-16 md:gap-24">
+
+        <!-- Left -->
+        <div>
+          <p class="text-[10px] tracking-[0.35em] text-ink-faint mb-6">INQUIRIES</p>
+          <ul class="flex flex-col gap-3 text-sm text-ink-mid mb-12">
+            <li>— 3DCG制作のご依頼</li>
+            <li>— 料金・納期のご相談</li>
+            <li>— Cinema 4Dトレーニングのご依頼</li>
+            <li>— その他のご相談</li>
+          </ul>
+
+          <div class="pt-8 border-t border-seam/50">
+            <p class="text-[10px] tracking-widest text-ink-faint mb-2">RESPONSE TIME</p>
+            <p class="text-xs text-ink-faint leading-relaxed">
+              通常2〜3営業日以内にご返信いたします。
+            </p>
+          </div>
+        </div>
+
+        <!-- Right: form -->
+        <form
+          action="https://formspree.io/f/mzdqyjdz"
+          method="POST"
+          class="flex flex-col gap-7"
+        >
+          <div class="grid sm:grid-cols-2 gap-7">
+            <div>
+              <label for="name" class="block text-[10px] tracking-widest text-ink-faint mb-2">
+                お名前 <span class="text-accent">*</span>
+              </label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                required
+                placeholder="田村 誠"
+                class="w-full bg-transparent border border-seam px-4 py-3 text-sm text-ink placeholder:text-seam focus:border-ink-mid focus:outline-none transition-colors duration-200"
+              />
+            </div>
+            <div>
+              <label for="company" class="block text-[10px] tracking-widest text-ink-faint mb-2">
+                会社名・屋号
+              </label>
+              <input
+                type="text"
+                id="company"
+                name="company"
+                placeholder="株式会社○○"
+                class="w-full bg-transparent border border-seam px-4 py-3 text-sm text-ink placeholder:text-seam focus:border-ink-mid focus:outline-none transition-colors duration-200"
+              />
+            </div>
+          </div>
+
+          <div>
+            <label for="email" class="block text-[10px] tracking-widest text-ink-faint mb-2">
+              メールアドレス <span class="text-accent">*</span>
+            </label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              placeholder="example@mail.com"
+              class="w-full bg-transparent border border-seam px-4 py-3 text-sm text-ink placeholder:text-seam focus:border-ink-mid focus:outline-none transition-colors duration-200"
+            />
+          </div>
+
+          <div>
+            <label for="subject" class="block text-[10px] tracking-widest text-ink-faint mb-2">
+              お問い合わせ種別 <span class="text-accent">*</span>
+            </label>
+            <select
+              id="subject"
+              name="subject"
+              required
+              class="w-full bg-cream border border-seam px-4 py-3 text-sm text-ink-mid focus:border-ink-mid focus:outline-none transition-colors duration-200 appearance-none cursor-pointer"
+            >
+              <option value="" disabled selected>選択してください</option>
+              <option value="virtual-live">バーチャルライブ用3DCGステージ制作</option>
+              <option value="product-cg">プロダクト系CG制作</option>
+              <option value="training">Cinema 4Dトレーニング</option>
+              <option value="other">その他</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="message" class="block text-[10px] tracking-widest text-ink-faint mb-2">
+              メッセージ <span class="text-accent">*</span>
+            </label>
+            <textarea
+              id="message"
+              name="message"
+              required
+              rows="6"
+              placeholder="ご依頼の詳細・ご質問などをご記入ください"
+              class="w-full bg-transparent border border-seam px-4 py-3 text-sm text-ink placeholder:text-seam focus:border-ink-mid focus:outline-none transition-colors duration-200 resize-none"
+            ></textarea>
+          </div>
+
+          <div>
+            <button
+              type="submit"
+              class="inline-flex items-center px-8 py-4 bg-accent text-white text-xs font-bold tracking-widest rounded hover:bg-accent-light transition-colors duration-200"
+            >
+              送信する
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
