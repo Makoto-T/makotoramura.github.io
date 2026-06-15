@@ -45,7 +45,7 @@ const categories = [
   </section>
 
   <!-- Categories -->
-  <section class="pb-32">
+  <section class="pb-20">
     <div class="max-w-6xl mx-auto px-6">
       <div class="flex flex-col gap-px bg-seam/30">
         {categories.map((cat) => (
@@ -85,6 +85,54 @@ const categories = [
             <line x1="1" y1="7" x2="13" y2="7" />
             <polyline points="8,2 13,7 8,12" />
           </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+  <!-- Personal Projects -->
+  <section class="border-t border-seam pb-32">
+    <div class="max-w-6xl mx-auto px-6 pt-20">
+      <p class="text-xs tracking-[0.35em] text-accent mb-4 font-medium">PERSONAL PROJECTS</p>
+      <h2 class="text-3xl md:text-4xl font-black tracking-tighter text-ink mb-12">個人プロジェクト</h2>
+
+      <div class="grid md:grid-cols-2 gap-px bg-seam/30">
+        <!-- C4D HIGH -->
+        <a href="https://c4dhigh.net/"
+           target="_blank" rel="noopener noreferrer"
+           class="bg-cream hover:bg-cream-mid transition-colors duration-300 group block">
+          <div class="aspect-video bg-ink flex items-center justify-center">
+            <span class="text-5xl font-black tracking-tighter text-cream/20 select-none">C4D HIGH</span>
+          </div>
+          <div class="p-8 md:p-10">
+            <div class="flex items-start justify-between mb-2">
+              <h3 class="text-xl font-bold text-ink tracking-tight">C4D HIGH</h3>
+              <svg class="shrink-0 mt-1 text-ink-faint group-hover:text-accent transition-colors duration-200" width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5">
+                <line x1="1" y1="13" x2="13" y2="1"/>
+                <polyline points="5,1 13,1 13,9"/>
+              </svg>
+            </div>
+            <p class="text-ink-mid text-sm leading-relaxed">Cinema 4Dのチュートリアルサイト</p>
+          </div>
+        </a>
+
+        <!-- Kimono Styler -->
+        <a href="https://kimono-styler.com/lp/kimonostyler-about/"
+           target="_blank" rel="noopener noreferrer"
+           class="bg-cream hover:bg-cream-mid transition-colors duration-300 group block">
+          <div class="overflow-hidden aspect-video">
+            <img src={`${BASE}banner_kimonostyler.jpg`} alt="Kimono Styler"
+                 class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500" />
+          </div>
+          <div class="p-8 md:p-10">
+            <div class="flex items-start justify-between mb-2">
+              <h3 class="text-xl font-bold text-ink tracking-tight">Kimono Styler（開発中）</h3>
+              <svg class="shrink-0 mt-1 text-ink-faint group-hover:text-accent transition-colors duration-200" width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5">
+                <line x1="1" y1="13" x2="13" y2="1"/>
+                <polyline points="5,1 13,1 13,9"/>
+              </svg>
+            </div>
+            <p class="text-ink-mid text-sm leading-relaxed">ウェブで遊べる着物コーデアプリ</p>
+          </div>
         </a>
       </div>
     </div>
